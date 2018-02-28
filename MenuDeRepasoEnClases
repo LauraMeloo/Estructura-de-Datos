@@ -1,0 +1,68 @@
+// Menuu.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void suma_digitos(int N);
+void par(int N);
+
+void main ()
+{	int N,opc;
+	cout<<"Ingrese un numero" <<endl;
+	cin >>N;
+	do
+	{	cout<<"-----MENU-----"<<endl;
+		cout<<"[1] Suma de Digitos"<<endl;
+		cout<<"[2] Numeros Pares"<<endl;
+		cout<<"[0] Salir"<<endl;
+		cin>>opc;
+		switch(opc)
+		{	case 1:
+			{	suma_digitos(N);
+				cout<<endl;
+				break;
+			}
+			case 2:
+			{	par(N);
+				cout<<endl;
+			    break;
+			}
+			case 0:
+			{	cout<<"Salir "<<endl;
+				cout<<endl;
+			}
+			default: break;
+		}
+	}while(opc!=0);
+	_getch();
+	
+}
+void suma_digitos(int N)
+{	int c,r,s=0;
+	while(N>0)
+	{	r=N%10;
+		s=s+r;
+		c=N/10;
+		N=c;
+	}
+	cout<<"La suma es: "<< s;
+	_getch();
+}
+
+
+
+void par(int N)
+{	int par=0,r,c;
+	while(N>0)
+	{	r=N%10;
+		if(r%2==0)
+		par = par + 1;
+		
+		c=N/10;
+		N=c;
+	}
+	cout <<"Tiene "<< par << " numeros pares"<<endl;
+	_getch();
+}
