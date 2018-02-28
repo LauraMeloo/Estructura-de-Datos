@@ -1,0 +1,24 @@
+// Complemento.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main()
+{	int N,dig=0,r,c,comple,p=1;
+	do
+	{	cout <<"Ingrese un numero con mas de 3 digitos: " << endl;
+		cin >>N;
+	}while(N<100);
+	while(N>0)
+	{	r=N%10;
+		comple=9-r;
+		dig=dig+comple*p;
+		p=p*10;
+		c=N/10;
+		N=c;
+	}
+	cout <<"El complemento es: " <<endl << dig;
+	_getch();
+}
